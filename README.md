@@ -1,3 +1,2 @@
-# caoculadorasofia
-esse é um app que calcula cães 
-## lalalal
+dasdasdasdas oi meu nome é sofia 
+
