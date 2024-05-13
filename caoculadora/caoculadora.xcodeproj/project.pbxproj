@@ -11,6 +11,8 @@
 		5E1CC0832BEA6C620007C88E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CC0822BEA6C620007C88E /* ContentView.swift */; };
 		5E1CC0852BEA6C630007C88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1CC0842BEA6C630007C88E /* Assets.xcassets */; };
 		5E1CC0882BEA6C630007C88E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1CC0872BEA6C630007C88E /* Preview Assets.xcassets */; };
+		5E9C85D82BF24E0500CD5254 /* porte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C85D72BF24E0500CD5254 /* porte.swift */; };
+		5E9C85DA2BF25BF700CD5254 /* styleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C85D92BF25BF700CD5254 /* styleGuide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		5E1CC0822BEA6C620007C88E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5E1CC0842BEA6C630007C88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1CC0872BEA6C630007C88E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E9C85D72BF24E0500CD5254 /* porte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = porte.swift; sourceTree = "<group>"; };
+		5E9C85D92BF25BF700CD5254 /* styleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,8 @@
 		5E1CC0742BEA6C620007C88E = {
 			isa = PBXGroup;
 			children = (
+				5E9C85D92BF25BF700CD5254 /* styleGuide.swift */,
+				5E9C85D72BF24E0500CD5254 /* porte.swift */,
 				5E1CC07F2BEA6C620007C88E /* caoculadora */,
 				5E1CC07E2BEA6C620007C88E /* Products */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				5E1CC0832BEA6C620007C88E /* ContentView.swift in Sources */,
 				5E1CC0812BEA6C620007C88E /* caoculadoraApp.swift in Sources */,
+				5E9C85DA2BF25BF700CD5254 /* styleGuide.swift in Sources */,
+				5E9C85D82BF24E0500CD5254 /* porte.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

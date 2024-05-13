@@ -12,41 +12,53 @@ struct ContentView: View {
     @State var years: Int?
     @State var months:Int?
     @State var result : Int?
-    @State var porteSelecionado = "Pequeno"
-    let portes = ["Pequeno", "Médio", "Grande"]
+    @State var porteSelecionado: Portes = .pequeno
+    
     var body: some View {
         VStack (alignment: . leading){
             Text ("Qual a idade do seu cão?")
+                .font(.header5)
+                .foregroundStyle(.indigo)
+            
             Text ("Anos")
+                .font(.body1)
+                .foregroundStyle(.indigo)
             TextField ("Quantos anos completos tem seu dog?",
                 value: $years,
-                format: .number
-            )
+                format: .number)
             .textFieldStyle(.roundedBorder)
             .keyboardType(.numberPad)
+            
             Text ("Meses")
+                .font(.body1)
+                .foregroundStyle(.indigo)
             TextField (
                 "E quantos meses além disso ele tem?", value: $months,
                 format: .number)
             .textFieldStyle(.roundedBorder)
             .keyboardType(.numberPad)
+            
             Text ("Porte")
+                .foregroundStyle(.indigo)
+                .font(.body1)
+
             Picker("Portes", selection: $porteSelecionado) {
-                ForEach(portes, id: \.self) {
-                    porte in Text (porte)
+                ForEach(Portes.allCases, id: \.self) {
+                    porte in Text(porte.rawValue)
                 }
             }
             .pickerStyle(.segmented)
             
             Divider()
-            
+    
             Spacer()
             
             if let result {
                 Text ("Seu cachorro tem idade humana...")
+                    .font(.body1)
                     .foregroundStyle(.indigo)
                 Text ("\(result) anos")
-                    .bold()
+                    .font(.display)
                     .foregroundStyle(.indigo)
                     .frame(maxHeight:150)
                     .frame(maxWidth: .infinity)
@@ -62,6 +74,7 @@ struct ContentView: View {
             }
             Spacer()
             Button("Cãocular", action:processYears)
+                .font(.body1)
                 .frame(maxWidth: .infinity)
                 .frame (height: 50)
                 .background(.indigo)
@@ -71,6 +84,7 @@ struct ContentView: View {
         }
         .padding()
     }
+    
     func processYears () {
         print ("cãocular")
         //resultado vai ser os anos vezes 7 +  meses * 7 / 12
@@ -82,19 +96,18 @@ struct ContentView: View {
             return
         }
         //multiplicador: pequeno 6, médio 7 e se for grande 8
-        let multiplicador:Int
+       
+        let multiplicador: Int
         switch porteSelecionado {
-        case "Pequeno":
+        case .pequeno:
             multiplicador = 6
-        case "Médio":
+        case .medio:
             multiplicador = 7
-        case "Grande":
+        case .grande:
             multiplicador = 8
-        default:
-            multiplicador = 0
         }
-    result = years * 7 + months * 7/12 *
-        multiplicador / 12
+            
+    result = years * multiplicador + months * multiplicador/12
     }
 }
 
