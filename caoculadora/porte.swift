@@ -12,7 +12,6 @@ enum Portes: String, CaseIterable {
     case grande = "Grande"
     
     func calcularIdade (deAnos anosCaninos: Int, emeses mesesCaninos: Int) -> Int {
-        return 1
         //multiplicador: pequeno 6, médio 7 e se for grande 8
        
         let multiplicador: Int
@@ -25,7 +24,7 @@ enum Portes: String, CaseIterable {
             multiplicador = 8
         }
             
-    let result = anosCaninos * multiplicador + mesesCaninos * multiplicador/12
+    let result = anosCaninos * multiplicador + mesesCaninos * multiplicador / 12
         
         return result
         
