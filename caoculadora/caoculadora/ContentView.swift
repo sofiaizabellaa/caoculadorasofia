@@ -24,8 +24,8 @@ struct ContentView: View {
                 .font(.body1)
                 .foregroundStyle(.indigo)
             TextField ("Quantos anos completos tem seu dog?",
-                value: $years,
-                format: .number)
+                       value: $years,
+                       format: .number)
             .textFieldStyle(.roundedBorder)
             .keyboardType(.numberPad)
             
@@ -41,7 +41,7 @@ struct ContentView: View {
             Text ("Porte")
                 .foregroundStyle(.indigo)
                 .font(.body1)
-
+            
             Picker("Portes", selection: $porteSelecionado) {
                 ForEach(Portes.allCases, id: \.self) {
                     porte in Text(porte.rawValue)
@@ -50,7 +50,7 @@ struct ContentView: View {
             .pickerStyle(.segmented)
             
             Divider()
-    
+            
             Spacer()
             
             if let result {
@@ -95,19 +95,7 @@ struct ContentView: View {
             print ("Pelo menos um campo deve ser maior que zero")
             return
         }
-        //multiplicador: pequeno 6, médio 7 e se for grande 8
-       
-        let multiplicador: Int
-        switch porteSelecionado {
-        case .pequeno:
-            multiplicador = 6
-        case .medio:
-            multiplicador = 7
-        case .grande:
-            multiplicador = 8
-        }
-            
-    result = years * multiplicador + months * multiplicador/12
+        result = porteSelecionado.calcularIdade(deAnos: years, emeses: months)
     }
 }
 
